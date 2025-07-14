@@ -1,23 +1,17 @@
 
-
-// Custom Exception
 class InvalidAgeException extends Exception {
     public InvalidAgeException(String message) {
         super(message);
     }
 
-    // Exception Chaining Constructor
     public InvalidAgeException(String message, Throwable cause) {
         super(message, cause);
     }
 }
 
 public class ExceptionDemo {
-
-    // Method yang melempar exception (throws)
     public static void validateAge(int age) throws InvalidAgeException {
         if (age < 0) {
-            // Exception Chaining: sebab asli adalah IllegalArgumentException
             throw new InvalidAgeException("Age cannot be negative", new IllegalArgumentException("Negative age"));
         } else if (age < 18) {
             throw new InvalidAgeException("Age must be at least 18");

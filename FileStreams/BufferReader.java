@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class BufferReader {
     public static void main(String[] args) {
-        String fileName = "contoh.txt";
+        String fileName = "test.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String baris;
